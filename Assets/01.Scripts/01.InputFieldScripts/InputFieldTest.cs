@@ -17,6 +17,9 @@ public class InputFieldTest : MonoBehaviour
         checkButton.onClick.AddListener(CheckInput);
     }
 
+    /// <summary>
+    /// 텍스트가 같은지 체크하는 메서드
+    /// </summary>
     void CheckInput()
     {
         // 입력된 텍스트 가져오기
@@ -25,14 +28,19 @@ public class InputFieldTest : MonoBehaviour
         // 입력된 텍스트가 목표 텍스트와 같은지 비교
         if (userInput == targetText)
         {
+            //맞으면 씬 넘기기
             NextScene();
         }
         else
         {
+            //아니면 Debug
             Debug.Log("False: 입력된 텍스트가 목표 텍스트와 다릅니다.");
         }
     }
 
+    /// <summary>
+    /// 씬 넘기기 메서드
+    /// </summary>
     private void NextScene()
     {
         SceneManager.LoadScene("00.TestScene");
