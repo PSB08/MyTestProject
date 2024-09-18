@@ -1,0 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class InputFieldTest : MonoBehaviour
+{
+    public TMP_InputField inputField; // TextMeshPro InputField를 연결합니다.
+    public Button checkButton; // Button을 연결합니다.
+    public string targetText = "Hello"; // 비교할 텍스트 설정
+
+    void Start()
+    {
+        // 버튼 클릭 시 CheckInput() 메서드 호출
+        checkButton.onClick.AddListener(CheckInput);
+    }
+
+    void CheckInput()
+    {
+        // 입력된 텍스트 가져오기
+        string userInput = inputField.text;
+
+        // 입력된 텍스트가 목표 텍스트와 같은지 비교
+        if (userInput == targetText)
+        {
+            NextScene();
+        }
+        else
+        {
+            Debug.Log("False: 입력된 텍스트가 목표 텍스트와 다릅니다.");
+        }
+    }
+
+    private void NextScene()
+    {
+        SceneManager.LoadScene("00.TestScene");
+    }
+
+
+}
