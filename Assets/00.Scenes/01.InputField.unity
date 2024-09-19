@@ -1227,7 +1227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1351581797}
   checkButton: {fileID: 1512418121}
-  targetText: Genshin Impact
+  targetText: Hello
 --- !u!1 &1813120042
 GameObject:
   m_ObjectHideFlags: 0

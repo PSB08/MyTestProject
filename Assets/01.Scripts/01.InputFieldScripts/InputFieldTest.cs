@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -43,7 +41,7 @@ public class InputFieldTest : MonoBehaviour
     /// </summary>
     private void NextScene()
     {
-        SceneManager.LoadScene("00.TestScene");
+        SceneManager.LoadScene(0);
     }
 
 

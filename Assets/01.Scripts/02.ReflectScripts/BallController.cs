@@ -44,6 +44,13 @@ public class BallController : MonoBehaviour
             direction = Vector2.Reflect(direction, normal);
             GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
+        else if (collision.gameObject.CompareTag("DeathWall"))
+        {
+            Application.Quit();
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #endif
+        }
     }
 
 
