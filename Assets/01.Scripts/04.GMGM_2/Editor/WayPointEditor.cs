@@ -37,6 +37,7 @@ public class WayPointEditor : Editor
                 _wayPoint.Points[i] = newWayPoint - _wayPoint.CurrentPos;
             }
         }
+        
 
     }
 }
