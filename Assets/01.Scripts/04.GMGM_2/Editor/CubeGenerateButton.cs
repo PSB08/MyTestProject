@@ -29,6 +29,7 @@ public class CubeGenerateButton : Editor
 
         EditorGUILayout.Space();
 
-        //_instance.str = EditorGUILayout.TextField("cube");
+        EditorGUILayout.LabelField("Test");
+
     }
 }

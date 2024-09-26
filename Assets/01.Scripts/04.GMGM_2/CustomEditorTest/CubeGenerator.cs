@@ -8,6 +8,8 @@ public class CubeGenerator : MonoBehaviour
     [SerializeField] private float distance;
     [SerializeField] private int cubeCount;
     public string str;
+    public int _int;
+    public float _float;
 
     public void GenerateCube()
     {
