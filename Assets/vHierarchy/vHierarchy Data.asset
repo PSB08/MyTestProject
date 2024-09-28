@@ -15,6 +15,7 @@ MonoBehaviour:
   sceneDatas_byGuid:
     keys:
     - 0d8d4ee2b516d4440913b2aa97a478b7
+    - f07e5d7e592f9af418f66c9917091502
     values:
     - goDatas_byGlobalId:
         keys:
@@ -25,3 +26,24 @@ MonoBehaviour:
           iconNameOrGuid: 
         - colorIndex: 6
           iconNameOrGuid: Camera Icon
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-f07e5d7e592f9af418f66c9917091502-1435040731-0
+        - globalObjectIdString: GlobalObjectId_V1-2-f07e5d7e592f9af418f66c9917091502-230609401-0
+        - globalObjectIdString: GlobalObjectId_V1-2-f07e5d7e592f9af418f66c9917091502-1170256781-0
+        - globalObjectIdString: GlobalObjectId_V1-2-f07e5d7e592f9af418f66c9917091502-1568640415-0
+        - globalObjectIdString: GlobalObjectId_V1-2-f07e5d7e592f9af418f66c9917091502-1514314440-0
+        - globalObjectIdString: GlobalObjectId_V1-2-f07e5d7e592f9af418f66c9917091502-1921881083-0
+        values:
+        - colorIndex: 6
+          iconNameOrGuid: 
+        - colorIndex: 7
+          iconNameOrGuid: 
+        - colorIndex: 4
+          iconNameOrGuid: 
+        - colorIndex: 2
+          iconNameOrGuid: 
+        - colorIndex: 3
+          iconNameOrGuid: 
+        - colorIndex: 7
+          iconNameOrGuid: 
