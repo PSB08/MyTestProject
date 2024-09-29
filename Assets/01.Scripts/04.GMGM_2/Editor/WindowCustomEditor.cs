@@ -25,7 +25,7 @@ public class WindowCustomEditor : EditorWindow
 
     private void OnGUI()
     {
-        _string = EditorGUILayout.TextField("씬 이름 ddd: ", _string);
+        _string = EditorGUILayout.TextField("씬 이름 : ", _string);
         folderPath = EditorGUILayout.TextField("폴더 경로 : ", folderPath);
 
 

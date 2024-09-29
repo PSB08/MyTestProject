@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a5e9912acc69b49bae44d10cb56515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMusic: {fileID: 8300000, guid: a82267a92378fd1479ee4057ce5eab30, type: 3}
   gizmoSize: {x: 1, y: 3}
+  newMusic: {fileID: 8300000, guid: a82267a92378fd1479ee4057ce5eab30, type: 3}
 --- !u!1 &358139067
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,8 +471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61a5e9912acc69b49bae44d10cb56515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newMusic: {fileID: 8300000, guid: cdef1caf9bbf9124ebeb34ee497fff69, type: 3}
   gizmoSize: {x: 1, y: 3}
+  newMusic: {fileID: 8300000, guid: cdef1caf9bbf9124ebeb34ee497fff69, type: 3}
 --- !u!1 &1170256781
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +622,7 @@ PlatformEffector2D:
   m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
-  m_SideArc: 1
+  m_SideArc: 0
 --- !u!1 &1412787334
 GameObject:
   m_ObjectHideFlags: 0
