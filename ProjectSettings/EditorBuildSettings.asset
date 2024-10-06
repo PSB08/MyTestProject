@@ -17,4 +17,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/03.ShaderGraphScene.unity
     guid: 1dd356d02f2ab234dbdeb276ca20c693
+  - enabled: 1
+    path: Assets/00.Scenes/04.GMGM_2.unity
+    guid: 6dc3d2ba42983fb41a4ddb5011a14670
+  - enabled: 1
+    path: Assets/00.Scenes/05.Effector2d.unity
+    guid: f07e5d7e592f9af418f66c9917091502
+  - enabled: 1
+    path: Assets/00.Scenes/06.Joint2D.unity
+    guid: 7732cc870d93f5a488974957e279d6cb
+  - enabled: 1
+    path: Assets/00.Scenes/07.TimeLine.unity
+    guid: 9eb2d63503f73ae42b145a73d65a1588
   m_configObjects: {}
