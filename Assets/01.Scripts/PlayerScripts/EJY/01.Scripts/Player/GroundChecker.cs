@@ -26,7 +26,7 @@ public class GroundChecker : MonoBehaviour, IPlayerComponent
         Gizmos.color = Color.white;
     }
 
-    public void Initialize(Player player)
+    public void Initialize(Players player)
     {
     }
 }

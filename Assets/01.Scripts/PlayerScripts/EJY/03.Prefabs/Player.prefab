@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8937334172897358955}
   - component: {fileID: 5092309637226644719}
-  - component: {fileID: 5437190081930320752}
   - component: {fileID: 6240226445491211491}
-  - component: {fileID: 2090487496878964628}
-  m_Layer: 8
+  - component: {fileID: 7100516625617018492}
+  - component: {fileID: 6179906413066820565}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -65,19 +65,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5437190081930320752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 177965042112780553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b1257439b00c344aaa43cc05052fb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _input: {fileID: 11400000, guid: b73a7d6d05a2a32478446d790ad4558f, type: 2}
 --- !u!114 &6240226445491211491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +82,20 @@ MonoBehaviour:
   timeInAir: 0
   extraGravity: 4
   gravityDelay: 0.15
---- !u!114 &2090487496878964628
+--- !u!114 &7100516625617018492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177965042112780553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9b1257439b00c344aaa43cc05052fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _input: {fileID: 11400000, guid: b73a7d6d05a2a32478446d790ad4558f, type: 2}
+--- !u!114 &6179906413066820565
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6217384704671189282}
   - component: {fileID: 8575877531827993596}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: GroundChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ MonoBehaviour:
   _checkerSize: {x: 0.5, y: 0.2}
   _whatIsGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 256
   IsGround:
     _value: 0
 --- !u!1 &4398094020360783071
@@ -168,8 +168,8 @@ GameObject:
   - component: {fileID: 520743083680231043}
   - component: {fileID: 3324983039812957778}
   - component: {fileID: 1961942517915531713}
-  - component: {fileID: 5937304581343489018}
-  m_Layer: 8
+  - component: {fileID: 5975086549275322896}
+  m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5937304581343489018
+--- !u!114 &5975086549275322896
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3496795834167980968}
   - component: {fileID: 6916788835390002668}
-  m_Layer: 8
+  m_Layer: 6
   m_Name: AgentCollider
   m_TagString: PlayerCollider
   m_Icon: {fileID: 0}

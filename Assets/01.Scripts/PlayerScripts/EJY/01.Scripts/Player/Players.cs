@@ -12,7 +12,7 @@ public enum PlayerStateEnum
     Jump,
     Fall
 }
-public class Player : MonoBehaviour
+public class Players : MonoBehaviour
 {
     [SerializeField] private InputReaderSO _input;
     private Dictionary<Type, IPlayerComponent> _components;

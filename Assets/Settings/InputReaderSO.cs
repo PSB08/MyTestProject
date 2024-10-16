@@ -12,7 +12,7 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
     Controls _control;
 
     public Vector2 MoveDir { get; private set; }
-    private Player _player;
+    private Players _player;
 
     private void OnEnable()
     {
@@ -37,7 +37,7 @@ public class InputReaderSO : ScriptableObject, IPlayerActions, IPlayerComponent
         Movement?.Invoke(MoveDir);
     }
 
-    public void Initialize(Player player)
+    public void Initialize(Players player)
     {
         _player = player;
     }

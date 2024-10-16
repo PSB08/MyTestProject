@@ -8,14 +8,14 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpPower;
 
-    private Player _player;
+    private Players _player;
     private InputReaderSO _input;
     public Rigidbody2D RbCompo { get; private set; }
 
     public float timeInAir;
     public float extraGravity = 20f, gravityDelay = 0.15f;
 
-    public void Initialize(Player player)
+    public void Initialize(Players player)
     {
         _player = player;
 

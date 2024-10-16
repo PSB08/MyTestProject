@@ -6,7 +6,7 @@ using UnityEngine;
 
 public abstract class State
 {
-    protected Player _player;
+    protected Players _player;
     protected StateMachine _stateMachine;
     protected int _animaHash;
 
@@ -17,7 +17,7 @@ public abstract class State
     protected GroundChecker _groundChecker;
     #endregion
 
-    public State(Player player, string animaName, StateMachine stateMachine)
+    public State(Players player, string animaName, StateMachine stateMachine)
     {
         _player = player;
         _stateMachine = stateMachine;

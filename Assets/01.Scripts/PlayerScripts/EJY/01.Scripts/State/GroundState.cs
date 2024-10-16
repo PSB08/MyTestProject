@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GroundState : State
 {
-    public GroundState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
+    public GroundState(Players player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
     }
 

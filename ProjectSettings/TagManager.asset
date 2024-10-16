@@ -9,6 +9,8 @@ TagManager:
   - Wall
   - Ball
   - DeathWall
+  - PlayerCollider
+  - Gim
   layers:
   - Default
   - TransparentFX

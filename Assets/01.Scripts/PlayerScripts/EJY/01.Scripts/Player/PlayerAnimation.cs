@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour, IPlayerComponent
 {
-    private Player _player;
+    private Players _player;
     public Animator AnimaCompo { get; private set; }
 
-    public void Initialize(Player player)
+    public void Initialize(Players player)
     {
         _player = player;
         AnimaCompo = GetComponent<Animator>();

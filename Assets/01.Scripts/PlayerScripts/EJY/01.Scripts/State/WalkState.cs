@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WalkState : State
 {
-    public WalkState(Player player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
+    public WalkState(Players player, string animaName, StateMachine stateMachine) : base(player, animaName, stateMachine)
     {
     }
 

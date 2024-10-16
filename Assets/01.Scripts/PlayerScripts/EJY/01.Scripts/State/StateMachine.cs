@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class StateMachine : MonoBehaviour, IPlayerComponent
 {
-    private Player _player;
+    private Players _player;
 
     private PlayerStateEnum _currentState;
     private Dictionary<PlayerStateEnum, State> _playerState;
@@ -52,7 +52,7 @@ public class StateMachine : MonoBehaviour, IPlayerComponent
         }
     }
 
-    public void Initialize(Player player)
+    public void Initialize(Players player)
     {
         _player = player;
     }

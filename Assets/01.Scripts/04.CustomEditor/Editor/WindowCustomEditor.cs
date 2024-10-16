@@ -57,8 +57,6 @@ public class WindowCustomEditor : EditorWindow
         EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects);
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
         AssetDatabase.Refresh();
-
-        Debug.Log("¾À »ý¼º");
     }
 
     public void CreateScript()
