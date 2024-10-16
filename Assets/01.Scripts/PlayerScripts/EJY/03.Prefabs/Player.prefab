@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8937334172897358955}
   - component: {fileID: 5092309637226644719}
-  - component: {fileID: 5126337964222037844}
+  - component: {fileID: 5437190081930320752}
   - component: {fileID: 6240226445491211491}
-  - component: {fileID: 842310546876673115}
+  - component: {fileID: 2090487496878964628}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -65,7 +65,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &5126337964222037844
+--- !u!114 &5437190081930320752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,7 +95,7 @@ MonoBehaviour:
   timeInAir: 0
   extraGravity: 4
   gravityDelay: 0.15
---- !u!114 &842310546876673115
+--- !u!114 &2090487496878964628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 520743083680231043}
   - component: {fileID: 3324983039812957778}
   - component: {fileID: 1961942517915531713}
-  - component: {fileID: 6258652659897656677}
+  - component: {fileID: 5937304581343489018}
   m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
@@ -264,7 +264,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6258652659897656677
+--- !u!114 &5937304581343489018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
