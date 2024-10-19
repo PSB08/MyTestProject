@@ -357,7 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ae49ee85d8331e47819820cdb58c76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0.003145218, a: 0}
+  _string: "\uAC00\na\n\uB098\nb\nc\n\uB2E4\n"
+  _string2: "\uAC00\n\uB098\n\uB2E4\n\uB77C\n\uB9C8\n\uBC14\n\uC0AC"
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

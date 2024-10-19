@@ -15,8 +15,6 @@ public class WindowCustomEditor : EditorWindow
 {
     private string _string = "NewScene";
     private string folderPath = "Assets/00.Scenes/Tests";
-    private string _createScript = "NewScript";
-    private string scriptPath = "Assets/01.Scripts/Tests";
 
     [MenuItem("Custom/CreateScene")]
 
@@ -37,14 +35,6 @@ public class WindowCustomEditor : EditorWindow
             CreateScene();
         }
 
-        _createScript = EditorGUILayout.TextField("스크립트 이름 : ", _createScript);
-        scriptPath = EditorGUILayout.TextField("폴더 경로 : ", scriptPath);
-
-        if (GUILayout.Button("CreateNewScript"))
-        {
-            CreateScript();
-        }
-
     }
 
     public void CreateScene()
@@ -57,31 +47,6 @@ public class WindowCustomEditor : EditorWindow
         EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects);
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), path);
         AssetDatabase.Refresh();
-    }
-
-    public void CreateScript()
-    {
-        string path = scriptPath;
-        if (File.Exists(path))
-        {
-            Debug.LogError("이미 존재하는 스크립트입니다.");
-            return;
-        }
-
-        string scriptContent = 
-$@"using UnitySystem; 
-    
-    public class {_createScript} : MonoBehaviour
-{{
-void Start()
-{{
-
-}}
-}}";
-
-        File.WriteAllText(path, scriptContent);
-        AssetDatabase.Refresh();
-        Debug.Log($"스크립트 {_createScript} 생성 완료!");
     }
 
 }

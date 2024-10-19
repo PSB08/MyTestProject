@@ -6,18 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class ClearGim : MonoBehaviour
 {
-    public UnityEvent isClear;
-
     public void ClearMethod()
     {
-        SceneManager.LoadScene("Stage3");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerCollider")
+        if (collision.CompareTag("PlayerCollider"))
         {
-            isClear?.Invoke();
+            ClearMethod();
         }
     }
 

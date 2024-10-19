@@ -14,6 +14,7 @@ public enum PlayerStateEnum
 }
 public class Players : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
     [SerializeField] private InputReaderSO _input;
     private Dictionary<Type, IPlayerComponent> _components;
 
@@ -49,7 +50,10 @@ public class Players : MonoBehaviour
 
     public void Flip(Vector2 dir)
     {
-        if (dir.x > 0) transform.localScale = new Vector3(1, 1, 1);
-        else if (dir.x < 0) transform.localScale = new Vector3(-1, 1, 1);
+        if (player != null)
+        {
+            if (dir.x > 0) transform.localScale = new Vector3(1, 1, 1);
+            else if (dir.x < 0) transform.localScale = new Vector3(-1, 1, 1);
+        }
     }
 }

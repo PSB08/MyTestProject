@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class FackGizmos : MonoBehaviour
 {
-    [SerializeField] private GameObject arrow;
-    [SerializeField] private CircleCollider2D circleCollider;
+
+    [Header("FallBlock")]
+    [SerializeField] private GameObject fallBlock;
+    [SerializeField] private Rigidbody2D rigidbody2;  
+
+    [Header("Variable")]
     public float detectionRange = 5f;
     private Transform player;
-    private int rotateValue = 180;
+    
 
     void Start()
     {
         player = GameObject.FindWithTag("PlayerCollider").transform;
-        arrow = GameObject.FindWithTag("Gim");
-        circleCollider = circleCollider.GetComponent<CircleCollider2D>();
+        fallBlock = GameObject.FindWithTag("Gim");
+        rigidbody2 = rigidbody2.GetComponent<Rigidbody2D>();
+     
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "PlayerCollider")
+        if (collision.gameObject.tag == "PlayerCollider" && fallBlock != null && rigidbody2 != null)
         {
-            arrow.transform.Rotate(arrow.transform.rotation.x, arrow.transform.rotation.y, rotateValue);
-            circleCollider.enabled = false;
+            rigidbody2.gravityScale = 1f;
         }
     }
 

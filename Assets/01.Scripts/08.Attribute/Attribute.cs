@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class Attribute : MonoBehaviour
 {
-    [ColorUsage(false, false)]
-    public Color color;
+    [Multiline(5)]
+    public string _string;
+    [TextArea]
+    public string _string2;
 
 }
 
