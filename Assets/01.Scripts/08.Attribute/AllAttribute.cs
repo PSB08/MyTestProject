@@ -45,7 +45,10 @@ public class AllAttribute : MonoBehaviour
     [ColorUsage(true, true)]
     public Color color;
 
-
+    [Multiline(5)]
+    public string _string;
+    [TextArea]
+    public string _string2;
 
 
     private void Start()

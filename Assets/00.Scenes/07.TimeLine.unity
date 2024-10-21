@@ -618,8 +618,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328469805}
-  - component: {fileID: 328469804}
-  - component: {fileID: 328469803}
   - component: {fileID: 328469802}
   - component: {fileID: 328469806}
   - component: {fileID: 328469807}
@@ -657,33 +655,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &328469803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328469801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3066ee259b0148d46b6c43be23d1b6f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveSpeed: 0
-  _jumpPower: 0
---- !u!114 &328469804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328469801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 296e72fbd5c3208418efeb6533eed3e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _input: {fileID: 11400000, guid: b73a7d6d05a2a32478446d790ad4558f, type: 2}
 --- !u!4 &328469805
 Transform:
   m_ObjectHideFlags: 0
@@ -1168,10 +1139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c950668815140d45aa37e1dfb735219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _checkerSize: {x: 0.7, y: 0.4}
-  _whatIsGround:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!1 &1883403977
 GameObject:
   m_ObjectHideFlags: 0

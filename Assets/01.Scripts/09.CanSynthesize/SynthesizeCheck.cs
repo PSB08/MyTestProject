@@ -2,24 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class SynthesizeCheck : MonoBehaviour
 {
-    [Header("Values")]
-    [SerializeField] private int total;
+    public int total;
 
     [Header("Texts")]
-    [SerializeField] private TextMeshProUGUI totalTxt;
+    [SerializeField] private TMP_InputField totalInputTxt;
+    [SerializeField] private UnityEngine.UI.Button btn;
     [SerializeField] private TextMeshProUGUI synthesizeTxt;
     [SerializeField] private TextMeshProUGUI remainedTxt;
 
     private void Start()
     {
-        Synthesize();
+        btn.onClick.AddListener(Synthesize);
     }
 
     private void Synthesize()
     {
+        int.TryParse(totalInputTxt.text, out total);
+
         int synthesizedValue = total / 3;
         int remainedValue = total % 3;
 
@@ -33,7 +37,6 @@ public class SynthesizeCheck : MonoBehaviour
             Debug.Log(remainedValue);
             synthesizeTxt.text = synthesizeString;
             remainedTxt.text = remainString;
-            totalTxt.text = totalString;
         }
         else
         {
@@ -42,5 +45,6 @@ public class SynthesizeCheck : MonoBehaviour
         }
         
     }
+
 
 }
