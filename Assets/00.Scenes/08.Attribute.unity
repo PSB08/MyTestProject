@@ -311,8 +311,10 @@ MonoBehaviour:
   x:
     x: 0
     y: 0
-  t: 1
+  t: 5
   color: {r: 1, g: 0, b: 0.89704704, a: 0}
+  _string: 
+  _string2: 
 --- !u!1 &1627205376
 GameObject:
   m_ObjectHideFlags: 0

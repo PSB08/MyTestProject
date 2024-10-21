@@ -7,10 +7,11 @@ using UnityEngine;
 
 public class Attribute : MonoBehaviour
 {
-    [Multiline(5)]
-    public string _string;
-    [TextArea]
-    public string _string2;
+    [ContextMenu("Test/TestMenu")]
+    void TestMenu()
+    {
+        Debug.Log("tests");
+    }
 
 }
 

@@ -27,9 +27,5 @@ public class CubeGenerateButton : Editor
             generator.DeleteCube();
         }
 
-        EditorGUILayout.Space();
-
-        EditorGUILayout.LabelField("Test");
-
     }
 }

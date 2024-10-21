@@ -149,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 114184498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -7, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -169,10 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cube: {fileID: 7688668788302231667, guid: d59d1fc813821e043b19f13dc55793a0, type: 3}
   distance: 2
-  cubeCount: 3
-  str: ttetete
-  _int: 0
-  _float: 0
+  cubeCount: 8
 --- !u!1 &1110127336
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +339,7 @@ MonoBehaviour:
   points:
   - {x: 0, y: 0, z: 0}
   - {x: 5, y: 0, z: 0}
+  - {x: 2.4034905, y: 3.6292105, z: 0}
 --- !u!4 &1891509990
 Transform:
   m_ObjectHideFlags: 0
