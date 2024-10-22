@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   total: 50
+  originTxt: {fileID: 1434711449}
   totalInputTxt: {fileID: 1758523318}
   btn: {fileID: 1225770496}
   synthesizeTxt: {fileID: 1299486121}

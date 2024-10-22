@@ -10,6 +10,7 @@ public class SynthesizeCheck : MonoBehaviour
     public int total;
 
     [Header("Texts")]
+    [SerializeField] private TextMeshProUGUI originTxt;
     [SerializeField] private TMP_InputField totalInputTxt;
     [SerializeField] private UnityEngine.UI.Button btn;
     [SerializeField] private TextMeshProUGUI synthesizeTxt;
@@ -33,15 +34,15 @@ public class SynthesizeCheck : MonoBehaviour
 
         if (synthesizedValue >= 0)
         {
-            Debug.Log(synthesizedValue);
-            Debug.Log(remainedValue);
+            originTxt.text = "합성 가능 수량";
             synthesizeTxt.text = synthesizeString;
             remainedTxt.text = remainString;
         }
         else
         {
-            Debug.Log("합성이 불가능 합니다.");
-            synthesizeTxt.text = "합성이 불가능 합니다.";
+            originTxt.text = "합성이 불가능 합니다.";
+            synthesizeTxt.text = "0";
+            remainedTxt.text = "0";
         }
         
     }

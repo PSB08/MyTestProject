@@ -8,6 +8,7 @@ using UnityEditor;
 public class CubeGenerateButton : Editor
 {
     CubeGenerator _instance;
+    
 
     public override void OnInspectorGUI()
     {
