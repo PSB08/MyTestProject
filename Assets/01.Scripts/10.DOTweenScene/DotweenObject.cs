@@ -7,6 +7,7 @@ using TMPro;
 public class DotweenObject : MonoBehaviour
 {
     [SerializeField] private Transform trans;
+    [SerializeField] private Transform trans2;
 
     private SpriteRenderer sprite;
 
@@ -17,7 +18,19 @@ public class DotweenObject : MonoBehaviour
 
     private void Start()
     {
-        StartDoTween();
+        //StartDoTween();
+        StartCoroutine(MoveDoObject());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            gameObject.transform.position = Vector2.zero;
+            sprite.color = Color.white;
+            //StartDoTween();
+            StartCoroutine(MoveDoObject());
+        }
     }
 
     private void StartDoTween()
@@ -25,11 +38,12 @@ public class DotweenObject : MonoBehaviour
         sprite.DOColor(Color.yellow, 2);
 
         #region SetLoops
-        
-        transform.DOMove(trans.position, 2f).SetLoops(2, LoopType.Yoyo);
+
+        transform.DOMove(trans.position, 2f).SetLoops(1, LoopType.Yoyo);
+        transform.DOMove(trans2.position, 2f).SetLoops(1, LoopType.Yoyo);
         //transform.DOMove(trans.position, 2f).SetLoops(2, LoopType.Restart);
         //transform.DOMove(trans.position, 2f).SetLoops(2, LoopType.Incremental);
-        
+
         #endregion
 
         #region SetEase
@@ -79,18 +93,16 @@ public class DotweenObject : MonoBehaviour
 
         #endregion
 
-
-
+       
     }
 
-    private void Update()
+    private IEnumerator MoveDoObject()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            gameObject.transform.position = Vector2.zero;
-            sprite.color = Color.white;
-            StartDoTween();
-        }
+        transform.DOMove(trans.position, 2f).SetLoops(2, LoopType.Yoyo);
+        yield return new WaitForSeconds(3f);
+        transform.DOMove(trans2.position, 2f).SetLoops(2, LoopType.Yoyo);
+        yield return new WaitForSeconds(3f);
+        transform.DOMove(new Vector3(0, 0, 0), 2f);
     }
 
 }
