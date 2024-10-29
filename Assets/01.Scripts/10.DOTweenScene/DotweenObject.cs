@@ -39,8 +39,8 @@ public class DotweenObject : MonoBehaviour
 
         #region SetLoops
 
-        transform.DOMove(trans.position, 2f).SetLoops(1, LoopType.Yoyo);
-        transform.DOMove(trans2.position, 2f).SetLoops(1, LoopType.Yoyo);
+        transform.DOMove(trans.position, 2f).SetLoops(2, LoopType.Yoyo);
+        transform.DOMove(trans2.position, 2f).SetLoops(2, LoopType.Yoyo);
         //transform.DOMove(trans.position, 2f).SetLoops(2, LoopType.Restart);
         //transform.DOMove(trans.position, 2f).SetLoops(2, LoopType.Incremental);
 
