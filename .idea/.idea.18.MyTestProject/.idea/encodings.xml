@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/01.InputFieldScripts/InputFieldTest.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/02.ReflectScripts/BallController.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/02.ReflectScripts/CreateBlock.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/02.ReflectScripts/ReflectManager.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/02.ReflectScripts/ReflectObject.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/04.CustomEditor/Editor/WayPointEditor.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/04.CustomEditor/Editor/WindowCustomEditor.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/04.CustomEditor/WayPointTest/WayPoint.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/05.Effector2d/MusicChangeZone.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/06.Joint2D/DistanceJointScript.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/08.Attribute/AllAttribute.cs" charset="EUC-KR" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/08.Attribute/Attribute.cs" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/Assets/01.Scripts/09.CanSynthesize/SynthesizeCheck.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/10.DOTweenScene/DoTextScripts.cs" charset="EUC-KR" />
   </component>
 </project>

@@ -1,15 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class DistanceJointScript : MonoBehaviour
 {
     [SerializeField] private DistanceJoint2D distanceJoint2D;
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private float detection;
 
 
     private void Update()
+    {
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         Vector2 distance1 = distanceJoint2D.connectedAnchor;
         Vector2 distance2 = distanceJoint2D.transform.position;
@@ -18,9 +21,7 @@ public class DistanceJointScript : MonoBehaviour
 
         if (hits.Length > 0)
         {
-            Debug.Log("Player�� �ֽ��ϴ�.");
+            //위치 이동 내용 작성하기
         }
-
     }
-
 }

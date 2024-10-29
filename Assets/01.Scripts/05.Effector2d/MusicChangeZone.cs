@@ -6,7 +6,7 @@ public class MusicChangeZone : MonoBehaviour
 {
     [SerializeField] private Vector2 gizmoSize;
 
-    public AudioClip newMusic; // 변경할 음악 클립
+    public AudioClip newMusic;
     private AudioSource audioSource;
 
     private void Start()
@@ -24,15 +24,12 @@ public class MusicChangeZone : MonoBehaviour
 
     private IEnumerator ChangeMusic(AudioClip newClip)
     {
-        // 현재 음악을 페이드 아웃
-        yield return StartCoroutine(FadeOut(audioSource, 1f)); // 1초 동안 페이드 아웃
+        yield return StartCoroutine(FadeOut(audioSource, 1f)); 
 
-        // 음악 클립 변경 및 재생
         audioSource.clip = newClip;
         audioSource.Play();
 
-        // 새로운 음악을 페이드 인
-        yield return StartCoroutine(FadeIn(audioSource, 1f)); // 1초 동안 페이드 인
+        yield return StartCoroutine(FadeIn(audioSource, 1f)); 
     }
 
     private IEnumerator FadeOut(AudioSource audioSource, float duration)
@@ -45,8 +42,8 @@ public class MusicChangeZone : MonoBehaviour
             yield return null;
         }
 
-        audioSource.volume = 0; // 완전히 소리 끄기
-        audioSource.Stop(); // 음악 멈추기
+        audioSource.volume = 0; 
+        audioSource.Stop();
     }
 
     private IEnumerator FadeIn(AudioSource audioSource, float duration)
@@ -60,7 +57,7 @@ public class MusicChangeZone : MonoBehaviour
             yield return null;
         }
 
-        audioSource.volume = 1; // 완전히 소리 키우기
+        audioSource.volume = 1;
     }
 
 
