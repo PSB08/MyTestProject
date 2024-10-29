@@ -31,20 +31,19 @@ public class SynthesizeCheck : MonoBehaviour
 
         int synthesizedValue = total / 3;
         int remainedValue = total % 3;
-
-        string totalString = total.ToString();
+        
         string synthesizeString = synthesizedValue.ToString();
         string remainString = remainedValue.ToString();
 
         if (synthesizedValue >= 3)
         {
-            originTxt.text = "ÇÕ¼º °¡´É ¼ö·®";
+            originTxt.text = "í•©ì„± ê°€ëŠ¥ ìˆ˜ëŸ‰";
             synthesizeTxt.text = synthesizeString;
             remainedTxt.text = remainString;
         }
-        else if (synthesizedValue <= 2)
+        else if (synthesizedValue <= 0)
         {
-            originTxt.text = "Àç·á°¡ ¾ø½À´Ï´Ù";
+            originTxt.text = "ìž¬ë£Œê°€ ì—†ìŠµë‹ˆë‹¤";
             synthesizeTxt.text = "0";
             remainedTxt.text = "0";
         }
@@ -53,7 +52,7 @@ public class SynthesizeCheck : MonoBehaviour
 
     public void TxtChange()
     {
-        originTxt.text = "ÃÂ µéÄ×´Ù";
+        originTxt.text = "ì³‡ ë“¤ì¼°ë‹¤";
     }
 
 }
