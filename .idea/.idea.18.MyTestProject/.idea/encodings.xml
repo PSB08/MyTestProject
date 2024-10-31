@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/Assets/01.Scripts/04.CustomEditor/WayPointTest/WayPoint.cs" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/Assets/01.Scripts/05.Effector2d/MusicChangeZone.cs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Assets/01.Scripts/06.Joint2D/DistanceJointScript.cs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Assets/01.Scripts/06.Joint2D/GameScript/PlayerTeleport.cs" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/Assets/01.Scripts/08.Attribute/AllAttribute.cs" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/Assets/01.Scripts/08.Attribute/Attribute.cs" charset="EUC-KR" />
     <file url="file://$PROJECT_DIR$/Assets/01.Scripts/09.CanSynthesize/SynthesizeCheck.cs" charset="UTF-8" />
