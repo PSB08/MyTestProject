@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/00.Scenes/03.ShaderGraphScene.unity
     guid: 1dd356d02f2ab234dbdeb276ca20c693
   - enabled: 1
-    path: Assets/00.Scenes/04.GMGM_2.unity
+    path: Assets/00.Scenes/04.UnityEdit.unity
     guid: 6dc3d2ba42983fb41a4ddb5011a14670
   - enabled: 1
     path: Assets/00.Scenes/05.Effector2d.unity
