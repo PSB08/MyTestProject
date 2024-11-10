@@ -39,6 +39,9 @@ EditorBuildSettings:
     path: Assets/00.Scenes/10.DoTweenScene.unity
     guid: 44890a83ba88dc4448cefaf412bc433a
   - enabled: 1
+    path: Assets/00.Scenes/11.PostProcessingScene.unity
+    guid: 19ae35cd2794f9c4e96552dfe75db726
+  - enabled: 1
     path: Assets/00.Scenes/TeamStages/Stage1.unity
     guid: b84dcd19051f677428cde3e010ff0a28
   m_configObjects: {}
