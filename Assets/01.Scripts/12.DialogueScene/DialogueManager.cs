@@ -6,13 +6,20 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI myText;
+    [SerializeField] private TextMeshProUGUI textLocated;
     [SerializeField] private List<string> dialogues;
     [SerializeField] private List<string> characterNames;
     private int currentDialogueIndex = 0;
     private CharacterManager characterManager;
     private Coroutine typingCoroutine;
     private bool isTyping;
+    //Test
+    private bool isFinished = false;
+
+    private void Start()
+    {
+        textLocated.text = "";
+    }
 
     private void Awake()
     {
@@ -21,7 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
             {
@@ -39,18 +46,14 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentDialogueIndex < dialogues.Count)
         {
-            Debug.Log(currentDialogueIndex);
-            Debug.Log(dialogues.Count);
             string characterName = characterNames[currentDialogueIndex - 1];
-            myText.text = $"{characterName}: {dialogues[currentDialogueIndex - 1]}";
+            textLocated.text = $"{characterName} : {dialogues[currentDialogueIndex - 1]}";
             isTyping = false;
         }
         if (currentDialogueIndex == dialogues.Count)
         {
-            Debug.Log(currentDialogueIndex);
-            Debug.Log(dialogues.Count);
             string characterName = characterNames[currentDialogueIndex - 1];
-            myText.text = $"{characterName}: {dialogues[currentDialogueIndex - 1]}";
+            textLocated.text = $"{characterName} : {dialogues[currentDialogueIndex - 1]}";
             isTyping = false;
         }
     }
@@ -66,23 +69,31 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("다이얼로그가 끝났습니다.");
-            myText.text = "";
+            isFinished = true;
+            textLocated.text = "";
         }
     }
 
     private IEnumerator Typing(string characterName, string dialogue)
     {
-        string fullText = $"{characterName}: {dialogue}";
-        myText.text = "";
+        string fullText = $"{characterName} : {dialogue}";
+        textLocated.text = "";
         isTyping = true;
 
-        for (int i = 0; i < fullText.Length; i++)
+        int typingLength = fullText.GetTypingLength(); 
+
+        for (int i = 0; i <= typingLength; i++)
         {
-            myText.text += fullText[i];
+            textLocated.text = fullText.Typing(i);
             yield return new WaitForSeconds(0.05f);
         }
 
         isTyping = false;
     }
+
+    public bool CheckFinishDialogue(bool finished)
+    {
+        return isFinished;
+    }
+
 }

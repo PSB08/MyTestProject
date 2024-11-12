@@ -191,6 +191,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &487634855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487634856}
+  - component: {fileID: 487634857}
+  m_Layer: 0
+  m_Name: Test
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &487634856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487634855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487634857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487634855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d1da8e9587a2cf46bd860255c65d598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueManager: {fileID: 1122037397}
+  panel: {fileID: 1542980284}
 --- !u!1 &1098713711
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,7 +272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: 75}
+  m_AnchoredPosition: {x: 125, y: 240}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1098713713
@@ -326,19 +372,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf07fbf496be434284dd95d71c023ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myText: {fileID: 1711345065}
+  textLocated: {fileID: 1711345065}
   dialogues:
-  - "1.\uC5EC\uAE34 \uC5B4\uB514\uC9C0"
-  - "2.\uC548\uC740 \uC0DD\uAC01\uBCF4\uB2E4 \uAE68\uB057\uD55C\uB370?"
-  - "3.\uC774 \uACBD\uAE30\uB97C \uC774\uAE30\uBA74 \uAF2D \uC5C4\uB9C8\uAC00 \uB053\uC5EC\uC900
-    \uAE40\uCE58\uCC0C\uAC1C\uB97C \uBA39\uC744\uAC70\uC57C"
-  - "4.BLG\uB294 \uC5B4\uB5BB\uAC8C \uAC15\uD300\uC774 \uB418\uC5C8\uB098"
-  - "5.JDG\uC758 \uB8F0\uB7EC\uB294 \uC5C4\uCCAD \uAC15\uD574 \uC9C8 \uC218\uAC00
-    \uC5C6\uC5B4"
-  - "6.\uC54C\uB85C\uC54C\uB85C\uC54C\uB85C\uB9AC\uBB3C\uB85C\uBB3C\uB85C\uBB3C\uB85C\uB9AC"
+  - pneumonoultramicroscopicsilicovolcanoconiosis
+  - "\uAC00\uB80C \uAC08\uB9AC\uC624 \uADF8\uC6EC \uAC31\uD50C\uB7AD\uD06C \uADF8\uB808\uC774\uBE0C\uC988"
+  - "\uB098\uC11C\uC2A4 \uB098\uB974 \uB098\uBBF8 \uB098\uD53C\uB9AC \uB178\uD2F8\uB7EC\uC2A4"
+  - "\uB2E4\uB9AC\uC6B0\uC2A4 \uB2E4\uC774\uC560\uB098 \uB4DC\uB808\uC774\uBE10 "
+  - "\uB810 \uB808\uB098\uD0C0 \uB7FC\uBE14 \uB808\uC624\uB098 \uB8F0\uB8E8"
+  - "\uB9C8\uC624\uCE74\uC774 \uBB38\uB3C4\uBC15\uC0AC \uBAA8\uB974\uAC00\uB098 \uBAA8\uB370\uCE74\uC774\uC800
+    \uB9D0\uD30C\uC774\uD2B8"
   characterNames:
   - PSB
-  - PSB
+  - LKW
   - LKW
   - PSB
   - PSB
@@ -844,7 +889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -125, y: 75}
+  m_AnchoredPosition: {x: -125, y: 240}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2080136237
@@ -907,3 +952,4 @@ SceneRoots:
   - {fileID: 1752766778}
   - {fileID: 361089209}
   - {fileID: 1122037396}
+  - {fileID: 487634856}

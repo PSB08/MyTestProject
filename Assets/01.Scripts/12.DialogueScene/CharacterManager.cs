@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class CharacterManager : MonoBehaviour
 {
-    [SerializeField] private List<CharacterImage> characterImages; // 캐릭터 이미지 리스트
+    [SerializeField] private List<CharacterImage> characterImages;
 
+    private void Start()
+    {
+        foreach (CharacterImage characterImage in characterImages)
+        {
+            characterImage.image.color = new Color(characterImage.image.color.r,
+                characterImage.image.color.g, characterImage.image.color.b, 0.25f);  //시작하면 어둡게 만들기
+        }
+    }
     public void UpdateCharacterImages(string speakingCharacterName)
     {
         foreach (CharacterImage characterImage in characterImages)
@@ -18,8 +26,10 @@ public class CharacterManager : MonoBehaviour
             else
             {
                 characterImage.image.color = new Color(characterImage.image.color.r,
-                    characterImage.image.color.g, characterImage.image.color.b, 0.5f); // 어둡게 설정
+                    characterImage.image.color.g, characterImage.image.color.b, 0.25f); // 어둡게 설정
             }
         }
     }
+
+
 }
