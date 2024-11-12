@@ -10,13 +10,23 @@ public class DialogueGameManager : MonoBehaviour
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private GameObject panel;
 
+    private void Start()
+    {
+        panel.SetActive(false);
+    }
+
     private void Update()
     {
         if (dialogueManager.CheckFinishDialogue(true))
         {
-            panel.Destroy();
+            panel.SetActive(false);
 
         }
+    }
+
+    public void StartDialogue()
+    {
+        panel.SetActive(true);
     }
 
 }
