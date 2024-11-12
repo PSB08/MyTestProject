@@ -50,7 +50,7 @@ public class AllAttribute : MonoBehaviour
     [TextArea]
     public string _string2;
 
-    [UnityEditor.MenuItem("Test/TestStirng")]
+    //[UnityEditor.MenuItem("Test/TestStirng")]
     static void TestMenu()
     {
         Debug.Log("test");
