@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     private bool isTyping;
     //Test
     private bool isFinished = false;
+    private bool isTalking = true;
 
     private void Start()
     {
@@ -28,6 +29,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        if (isTalking == false) return;
         if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
@@ -44,6 +46,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DisplayCurrentDialogue()
     {
+        if (isTalking == false) return;
         if (currentDialogueIndex < dialogues.Count)
         {
             string characterName = characterNames[currentDialogueIndex - 1];
@@ -60,6 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowNextDialogue()
     {
+        if (isTalking == false) return;
         if (currentDialogueIndex < dialogues.Count)
         {
             string characterName = characterNames[currentDialogueIndex];
@@ -70,6 +74,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             isFinished = true;
+            isTalking = false;
             textLocated.text = "";
         }
     }
@@ -91,9 +96,26 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
+    public void SkipDialogue()
+    {
+        if (currentDialogueIndex < dialogues.Count)
+        {
+            isFinished = true;
+            isTalking = false;
+            textLocated.text = "";
+        }
+    }
+
     public bool CheckFinishDialogue(bool finished)
     {
         return isFinished;
     }
+
+    public bool CheckTalking(bool talking)
+    {
+        return isTalking;
+    }
+
+
 
 }
