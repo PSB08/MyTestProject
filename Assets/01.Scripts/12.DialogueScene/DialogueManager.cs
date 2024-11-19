@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textLocated;
     [SerializeField] private List<string> dialogues;
     [SerializeField] private List<string> characterNames;
+    [SerializeField] private GameObject cap;
     private int currentDialogueIndex = 0;
     private CharacterManager characterManager;
     private Coroutine typingCoroutine;
@@ -20,6 +21,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         textLocated.text = "";
+        cap.SetActive(false);
     }
 
     private void Awake()
@@ -58,6 +60,7 @@ public class DialogueManager : MonoBehaviour
             string characterName = characterNames[currentDialogueIndex - 1];
             textLocated.text = $"{characterName} : {dialogues[currentDialogueIndex - 1]}";
             isTyping = false;
+            cap.SetActive(true);
         }
     }
 
@@ -76,6 +79,7 @@ public class DialogueManager : MonoBehaviour
             isFinished = true;
             isTalking = false;
             textLocated.text = "";
+            cap.SetActive(true);
         }
     }
 
