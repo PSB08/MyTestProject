@@ -3,23 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("SerializeField")]
     [SerializeField] private TextMeshProUGUI textLocated;
     [SerializeField] private List<string> dialogues;
     [SerializeField] private List<string> characterNames;
     [SerializeField] private GameObject cap;
+    [SerializeField] private Button autoBtn;
+    [Header("Private UI")]
+    private Image buttonImage;
+    [Header("Private Value")]
     private int currentDialogueIndex = 0;
-    private CharacterManager characterManager;
-    private Coroutine typingCoroutine;
     private bool isTyping;
-    //Test
+    private bool isAutoDialogue = false;
     private bool isFinished = false;
     private bool isTalking = true;
+    [Header("Manager and Coroutine")]
+    private CharacterManager characterManager;
+    private Coroutine typingCoroutine;
+    private Coroutine autoDialogueCoroutine;
 
     private void Start()
     {
+        isAutoDialogue = false;
+        isFinished = false;
+        isTalking = true;
         textLocated.text = "";
         cap.SetActive(false);
     }
@@ -27,12 +39,14 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         characterManager = GetComponent<CharacterManager>();
+        buttonImage = autoBtn.GetComponent<Image>();
     }
 
     private void Update()
     {
         if (isTalking == false) return;
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.Space))
+        if (isAutoDialogue == true) return;
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (isTyping)
             {
@@ -44,8 +58,12 @@ public class DialogueManager : MonoBehaviour
                 ShowNextDialogue();
             }
         }
+
     }
 
+    /// <summary>
+    /// 지금 대화 보여주는 메서드
+    /// </summary>
     private void DisplayCurrentDialogue()
     {
         if (isTalking == false) return;
@@ -64,6 +82,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 다음 대화 내용 보여주는 메서드
+    /// </summary>
     private void ShowNextDialogue()
     {
         if (isTalking == false) return;
@@ -76,13 +97,16 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            isFinished = true;
-            isTalking = false;
-            textLocated.text = "";
-            cap.SetActive(true);
+            FinishedTalking();
         }
     }
 
+    /// <summary>
+    /// 대화 타이핑하는 메서드
+    /// </summary>
+    /// <param name="characterName"></param>
+    /// <param name="dialogue"></param>
+    /// <returns></returns>
     private IEnumerator Typing(string characterName, string dialogue)
     {
         string fullText = $"{characterName} : {dialogue}";
@@ -100,26 +124,94 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
     }
 
+    /// <summary>
+    /// 대화 스킵 메서드
+    /// </summary>
     public void SkipDialogue()
     {
         if (currentDialogueIndex < dialogues.Count)
         {
-            isFinished = true;
-            isTalking = false;
-            textLocated.text = "";
+            FinishedTalking();
         }
     }
 
+    /// <summary>
+    /// 대화가 끝났는지 확인하는 메서드
+    /// </summary>
+    /// <param name="finished"></param>
+    /// <returns></returns>
     public bool CheckFinishDialogue(bool finished)
     {
         return isFinished;
     }
 
+    /// <summary>
+    /// 이야기 중인지 체크하는 메서드
+    /// </summary>
+    /// <param name="talking"></param>
+    /// <returns></returns>
     public bool CheckTalking(bool talking)
     {
         return isTalking;
     }
 
+    /// <summary>
+    /// 자동모드로 변경하는 메서드
+    /// </summary>
+    public void ToggleAutoDialogue()
+    {
+        Color origin = Color.white;
+        Color changed = Color.yellow;
+        isAutoDialogue = !isAutoDialogue;
 
+        if (isAutoDialogue)
+        {
+            buttonImage.color = changed;
+            if (autoDialogueCoroutine == null)
+            {
+                autoDialogueCoroutine = StartCoroutine(AutoDialogueCoroutine());
+            }
+        }
+        else
+        {
+            isAutoDialogue = false;
+            buttonImage.color = origin;
+            if (autoDialogueCoroutine != null)
+            {
+                StopCoroutine(autoDialogueCoroutine);
+                autoDialogueCoroutine = null;
+            }
+        }
+
+    }
+
+    /// <summary>
+    /// 자동 대화 코루틴
+    /// </summary>
+    /// <returns></returns>
+    private IEnumerator AutoDialogueCoroutine()
+    {
+        while (currentDialogueIndex < dialogues.Count)
+        {
+            ShowNextDialogue();
+            yield return new WaitForSeconds(2f);
+        }
+        if (currentDialogueIndex >= dialogues.Count)
+        {
+            FinishedTalking();
+        }
+
+    }
+
+    /// <summary>
+    /// finished = true, talking = false, text.text = "";
+    /// </summary>
+    private void FinishedTalking()
+    {
+        isFinished = true;
+        isTalking = false;
+        textLocated.text = "";
+        cap.SetActive(true);
+    }
 
 }
