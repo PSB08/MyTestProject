@@ -1,15 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class DialogueGameManager : MonoBehaviour
 {
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject capsule;
+
 
     private void Start()
     {
@@ -27,7 +24,7 @@ public class DialogueGameManager : MonoBehaviour
 
     public void SkipBtn()
     {
-        if (dialogueManager.CheckTalking(false))
+        if (dialogueManager.CheckTalking(true))
         {
             dialogueManager.SkipDialogue();
             capsule.SetActive(true);

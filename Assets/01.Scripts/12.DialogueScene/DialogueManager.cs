@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private List<string> characterNames;
     [SerializeField] private GameObject cap;
     [SerializeField] private Button autoBtn;
+    [SerializeField] private Camera main;
     [Header("Private UI")]
     private Image buttonImage;
     [Header("Private Value")]
@@ -32,7 +33,7 @@ public class DialogueManager : MonoBehaviour
         isAutoDialogue = false;
         isFinished = false;
         isTalking = true;
-        textLocated.text = "";
+        textLocated.text = "스페이스 바로 대화 시작.";
         cap.SetActive(false);
     }
 
@@ -79,6 +80,7 @@ public class DialogueManager : MonoBehaviour
             textLocated.text = $"{characterName} : {dialogues[currentDialogueIndex - 1]}";
             isTyping = false;
             cap.SetActive(true);
+            main.backgroundColor = Color.gray;
         }
     }
 
@@ -191,20 +193,23 @@ public class DialogueManager : MonoBehaviour
     /// <returns></returns>
     private IEnumerator AutoDialogueCoroutine()
     {
-        while (currentDialogueIndex < dialogues.Count)
+        for (int i = currentDialogueIndex; i < dialogues.Count; i++)
         {
+            while (isTyping)
+            {
+                yield return null; 
+            }
+            yield return new WaitForSeconds(1f);
             ShowNextDialogue();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
         }
-        if (currentDialogueIndex >= dialogues.Count)
-        {
-            FinishedTalking();
-        }
+        yield return new WaitForSeconds(2f);
+        FinishedTalking();
 
     }
 
     /// <summary>
-    /// finished = true, talking = false, text.text = "";
+    /// 이야기 끝나면 할 것들
     /// </summary>
     private void FinishedTalking()
     {
