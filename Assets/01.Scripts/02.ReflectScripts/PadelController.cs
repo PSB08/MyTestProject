@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PadelController : MonoBehaviour
-{
-    public float speed = 10f;
-
-    private void Update()
+{ 
+    private void Check()
     {
-        float move = Input.GetAxis("Horizontal");
-        transform.Translate(Vector2.right * move * speed * Time.deltaTime);
+        Debug.Log("Clear");
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            collision.gameObject.SetActive(false);
+            Check();
+        }
+    }
+
 }

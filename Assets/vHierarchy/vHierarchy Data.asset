@@ -22,8 +22,8 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-0d8d4ee2b516d4440913b2aa97a478b7-2044673917-0
         - globalObjectIdString: GlobalObjectId_V1-2-0d8d4ee2b516d4440913b2aa97a478b7-1122025610-0
         values:
-        - colorIndex: 1
-          iconNameOrGuid: 
+        - colorIndex: 0
+          iconNameOrGuid: Settings Icon
         - colorIndex: 6
           iconNameOrGuid: Camera Icon
     - goDatas_byGlobalId:
