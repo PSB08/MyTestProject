@@ -18,7 +18,6 @@ public class DotweenObject : MonoBehaviour
 
     private void Start()
     {
-        //StartDoTween();
         StartCoroutine(MoveDoObject());
     }
 

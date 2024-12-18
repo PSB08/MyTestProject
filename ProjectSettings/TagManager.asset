@@ -11,6 +11,8 @@ TagManager:
   - DeathWall
   - PlayerCollider
   - Gim
+  - Enemy
+  - Boss
   layers:
   - Default
   - TransparentFX
