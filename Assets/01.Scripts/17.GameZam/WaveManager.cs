@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class WaveManager : MonoSingletone<WaveManager>
 {
+    [Header("Value")]
+    
     [Header("EnemyPrefab")]
     [SerializeField] private GameObject meleeEnemyPrefab;
     [SerializeField] private GameObject rangedEnemyPrefab;
@@ -22,6 +24,7 @@ public class WaveManager : MonoSingletone<WaveManager>
     [Space(10)]
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI waveTxt;
+    [SerializeField] private TextMeshProUGUI waveCountTxt;
     [Space(10)]
     [Header("List")]
     [SerializeField] private List<Transform> trans = new List<Transform>();
@@ -32,13 +35,13 @@ public class WaveManager : MonoSingletone<WaveManager>
     private void Start()
     {
         waveTxt.text = "";
-        StartWave();
+        StartCoroutine(WaveStartCount(3));
     }
 
     private void StartWave()
     {
         currentWave++;
-        Debug.Log($"{currentWave}웨이브 시작");
+        Debug.Log($"{currentWave} 웨이브 시작");
 
         int numberOfEnemies = currentWave; 
 
@@ -46,6 +49,7 @@ public class WaveManager : MonoSingletone<WaveManager>
         {
             spawnPoint = bossSpawnpoint;
             waveTxt.text = $"BossWave";
+            waveTxt.color = Color.red;
             if (currentWave == 5)
             {
                 Instantiate(bossPrefab, spawnPoint.position, Quaternion.identity);
@@ -65,9 +69,10 @@ public class WaveManager : MonoSingletone<WaveManager>
             for (int i = 0; i < numberOfEnemies; i++)
             {
                 waveTxt.text = $"Wave : {currentWave}";
+                waveTxt.color = Color.white;
 
                 GameObject enemyToSpawn;
-                int enemyType = Random.Range(0, 4); 
+                int enemyType = Random.Range(0, 4);
 
                 switch (enemyType)
                 {
@@ -101,8 +106,8 @@ public class WaveManager : MonoSingletone<WaveManager>
         {
             if (currentWave < 15) 
             {
-                Debug.Log($"{currentWave}웨이브 끝");
-                StartWave();
+                Debug.Log($"{currentWave} 웨이브 끝");
+                StartCoroutine(WaveStartCount(3));
             }
             else
             {
@@ -111,5 +116,21 @@ public class WaveManager : MonoSingletone<WaveManager>
         }
     }
 
+    private IEnumerator WaveStartCount(int waveCount)
+    {
+        waveCountTxt.gameObject.SetActive(true);
+
+        for (int i = waveCount; i > 0; i--)
+        {
+            waveCountTxt.text = $"남은시간 : {i}";
+            yield return new WaitForSeconds(1f); 
+        }
+
+        waveCountTxt.text = "Start!"; 
+        yield return new WaitForSeconds(1f); 
+
+        waveCountTxt.gameObject.SetActive(false); 
+        StartWave(); 
+    }
 
 }
