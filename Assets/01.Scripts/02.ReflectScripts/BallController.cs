@@ -49,8 +49,6 @@ public class BallController : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = (mousePosition - (Vector2)transform.position).normalized;
 
-        lineRenderer.SetColors(Color.white, Color.gray);
-
         lineRenderer.SetPosition(0, transform.position);
         lineRenderer.SetPosition(1, transform.position + (Vector3)direction * 7);
 
