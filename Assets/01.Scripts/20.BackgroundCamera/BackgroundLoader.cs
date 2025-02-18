@@ -77,13 +77,13 @@ public class BackgroundLoader : MonoBehaviour
         float scaleX, scaleY;
         if (imageAspect > screenAspect)
         {
-            // 이미지가 더 넓을 경우 → 높이에 맞춰서 크기 조정
+            // 이미지가 더 넓을 경우 - 높이에 맞춰서 크기 조정
             scaleY = screenHeight / imageHeight;
             scaleX = scaleY;
         }
         else
         {
-            // 이미지가 더 길쭉할 경우 → 가로에 맞춰서 크기 조정
+            // 이미지가 더 길쭉할 경우 - 가로에 맞춰서 크기 조정
             scaleX = screenWidth / imageWidth;
             scaleY = scaleX;
         }
