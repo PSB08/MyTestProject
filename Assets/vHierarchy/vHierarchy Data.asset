@@ -16,6 +16,7 @@ MonoBehaviour:
     keys:
     - 0d8d4ee2b516d4440913b2aa97a478b7
     - f07e5d7e592f9af418f66c9917091502
+    - 0aa053b8f6c2c104091d65984764266c
     values:
     - goDatas_byGlobalId:
         keys:
@@ -47,3 +48,9 @@ MonoBehaviour:
           iconNameOrGuid: 
         - colorIndex: 7
           iconNameOrGuid: 
+    - goDatas_byGlobalId:
+        keys:
+        - globalObjectIdString: GlobalObjectId_V1-2-0aa053b8f6c2c104091d65984764266c-276527702-0
+        values:
+        - colorIndex: 0
+          iconNameOrGuid: AudioSource Icon
