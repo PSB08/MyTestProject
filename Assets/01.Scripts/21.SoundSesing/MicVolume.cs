@@ -34,7 +34,7 @@ public class MicVolume : MonoBehaviour
         }
     }
 
-    void Update()
+    private void Update()
     {
         if (micClip == null) return;
 
