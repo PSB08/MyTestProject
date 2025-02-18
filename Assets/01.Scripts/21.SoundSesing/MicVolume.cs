@@ -18,7 +18,7 @@ public class MicVolume : MonoBehaviour
     private float[] samples;
     private float[] smoothSamples; // 이전 샘플과 보간할 배열
 
-    void Start()
+    private void Start()
     {
         if (Microphone.devices.Length > 0)
         {
