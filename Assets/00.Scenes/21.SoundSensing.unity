@@ -173,6 +173,7 @@ MonoBehaviour:
   waveformHeight: 5
   waveformWidth: 10
   updateSpeed: 0.1
+  updateInterval: 0.1
   lineRenderer: {fileID: 276527705}
   volumeText: {fileID: 359668000}
 --- !u!120 &276527705

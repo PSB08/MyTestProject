@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class MicVolume : MonoBehaviour
 {
@@ -10,13 +9,16 @@ public class MicVolume : MonoBehaviour
     public int sampleSize = 1024;
     public float waveformHeight = 5f;
     public float waveformWidth = 10f;
-    public float updateSpeed = 0.1f; // 그래프 변화 속도 (0.01 ~ 1 사이로 조절)
+    public float updateSpeed = 0.1f;
+    public float updateInterval = 0.5f;
     public LineRenderer lineRenderer;
     public TextMeshProUGUI volumeText;
 
     private AudioClip micClip;
     private float[] samples;
-    private float[] smoothSamples; // 이전 샘플과 보간할 배열
+    private float[] smoothSamples;
+    private float smoothedDb = 0f;
+    private float lastUpdateTime = 0f;
 
     private void Start()
     {
@@ -25,7 +27,7 @@ public class MicVolume : MonoBehaviour
             micDevice = Microphone.devices[0];
             micClip = Microphone.Start(micDevice, true, 1, AudioSettings.outputSampleRate);
             samples = new float[sampleSize];
-            smoothSamples = new float[sampleSize]; // 초기화
+            smoothSamples = new float[sampleSize];
             lineRenderer.positionCount = sampleSize;
         }
         else
@@ -42,7 +44,15 @@ public class MicVolume : MonoBehaviour
         if (micPosition < 0) return;
 
         float volumeDb = GetMicVolumeDb();
-        volumeText.text = $"소리 크기: <color=red>{volumeDb:F2}</color> dB";
+        volumeDb = Mathf.Clamp(volumeDb + 80f, 0f, 120f); // 데시벨 범위 조정
+
+        smoothedDb = Mathf.Lerp(smoothedDb, volumeDb, updateSpeed);
+
+        if (Time.time - lastUpdateTime >= updateInterval)
+        {
+            volumeText.text = $"소리 크기: <color=red>{smoothedDb:F2}</color> dB";
+            lastUpdateTime = Time.time;
+        }
 
         micClip.GetData(samples, micPosition);
         SmoothWaveform();
@@ -53,7 +63,7 @@ public class MicVolume : MonoBehaviour
     {
         float[] samples = new float[sampleSize];
         int micPosition = Microphone.GetPosition(micDevice) - sampleSize;
-        if (micPosition < 0) return -Mathf.Infinity;
+        if (micPosition < 0) return 0f;
 
         micClip.GetData(samples, micPosition);
         float sum = 0f;
@@ -82,7 +92,7 @@ public class MicVolume : MonoBehaviour
         for (int i = 0; i < sampleSize; i++)
         {
             float x = i * scaleX - (waveformWidth / 2);
-            float y = smoothSamples[i] * waveformHeight; // 부드럽게 보간된 값 사용
+            float y = smoothSamples[i] * waveformHeight;
             lineRenderer.SetPosition(i, new Vector3(x, y, 0));
         }
     }
