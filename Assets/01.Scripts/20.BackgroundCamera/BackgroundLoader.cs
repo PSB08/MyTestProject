@@ -14,7 +14,7 @@ public class BackgroundLoader : MonoBehaviour
     private void Start()
     {
         string path = GetWallpaperPath();
-        Debug.Log(path);// 경로 확인
+        Debug.Log(path); // 경로 확인
 
         if (!string.IsNullOrEmpty(path) && File.Exists(path))
         {
