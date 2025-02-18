@@ -56,4 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00.Scenes/15.Timer.unity
     guid: 0356d6aff3e03f14dae3f4b0631fff1a
+  - enabled: 1
+    path: Assets/00.Scenes/20.BackgroundCamera.unity
+    guid: 539bdd22f1d73ef41a56e51142e07cf5
+  - enabled: 1
+    path: Assets/00.Scenes/21.SoundSensing.unity
+    guid: 0aa053b8f6c2c104091d65984764266c
   m_configObjects: {}
