@@ -48,6 +48,11 @@ public class MicVolume : MonoBehaviour
 
         smoothedDb = Mathf.Lerp(smoothedDb, volumeDb, updateSpeed);
 
+        if (smoothedDb > 70f) // 70dB 이상이면 로그 출력
+        {
+            Debug.Log($"[경고] 높은 소리 감지: {smoothedDb:F2} dB");
+        }
+
         if (Time.time - lastUpdateTime >= updateInterval)
         {
             volumeText.text = $"소리 크기: <color=red>{smoothedDb:F2}</color> dB";
