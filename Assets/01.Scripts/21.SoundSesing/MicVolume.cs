@@ -53,6 +53,7 @@ public class MicVolume : MonoBehaviour
         if (smoothedDb > 70f) // 70dB 이상이면 로그 출력
         {
             testObj.SetActive(true);
+            testObj.transform.position = new Vector3(0, 0, 0);
         }
 
         if (Time.time - lastUpdateTime >= updateInterval)
