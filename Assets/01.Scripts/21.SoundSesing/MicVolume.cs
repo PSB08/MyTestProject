@@ -13,6 +13,7 @@ public class MicVolume : MonoBehaviour
     public float updateInterval = 0.5f;
     public LineRenderer lineRenderer;
     public TextMeshProUGUI volumeText;
+    public GameObject testObj;
 
     private AudioClip micClip;
     private float[] samples;
@@ -22,6 +23,7 @@ public class MicVolume : MonoBehaviour
 
     private void Start()
     {
+        testObj.SetActive(false);
         if (Microphone.devices.Length > 0)
         {
             micDevice = Microphone.devices[0];
@@ -50,7 +52,7 @@ public class MicVolume : MonoBehaviour
 
         if (smoothedDb > 70f) // 70dB 이상이면 로그 출력
         {
-            Debug.Log($"[경고] 높은 소리 감지: {smoothedDb:F2} dB");
+            testObj.SetActive(true);
         }
 
         if (Time.time - lastUpdateTime >= updateInterval)
