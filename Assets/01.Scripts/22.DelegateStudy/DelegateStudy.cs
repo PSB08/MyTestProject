@@ -1,10 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DelegateStudy : MonoBehaviour
 {
+    public TextMeshProUGUI lvlTxt;
+    public TextMeshProUGUI hpTxt;
+    public TextMeshProUGUI atkTxt;
+
+    public int myLvl;
+    public int myHp;
+    public int myAtk;
+
     public delegate void TestDelegate(int lvl, int hp, int atk);
 
     static int playerLvl;
@@ -14,19 +23,16 @@ public class DelegateStudy : MonoBehaviour
     static void PlusLvl(int lvl, int hp, int atk)
     {
         playerLvl += lvl;
-        Debug.Log(playerLvl);
     }
 
     static void PlusHp(int lvl, int hp, int atk)
     {
         playerHp += hp;
-        Debug.Log(playerHp);
     }
 
     static void PlusAtk(int lvl, int hp, int atk)
     {
         playerAtk += atk;
-        Debug.Log(playerAtk);
     }
 
     private void Start()
@@ -35,8 +41,10 @@ public class DelegateStudy : MonoBehaviour
         dele += PlusHp;
         dele += PlusAtk;
 
-        dele(10, 20, 20);   //Debug -> 10, 20, 20
-        dele(20, 50, 100);  //Debug -> 30, 70, 120
+        dele(myLvl, myHp, myAtk);
+        lvlTxt.text = playerLvl.ToString();
+        hpTxt.text = playerHp.ToString();
+        atkTxt.text = playerAtk.ToString();
     }
 
 }
