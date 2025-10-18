@@ -19,7 +19,7 @@ public class JumpState : WalkState
         CalculatorInAirTime();
         ApplyExtraGravity();
 
-        if (_playerMovement.RbCompo.velocity.y < 0)
+        if (_playerMovement.RbCompo.linearVelocity.y < 0)
             _stateMachine.ChageState(PlayerStateEnum.Fall);
     }
 

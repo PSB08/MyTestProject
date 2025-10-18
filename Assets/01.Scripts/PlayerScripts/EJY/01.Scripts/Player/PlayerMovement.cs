@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour, IPlayerComponent
     public void Movement()
     {
         Vector2 moveDir = _input.MoveDir;
-        RbCompo.velocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.velocity.y);
+        RbCompo.linearVelocity = new Vector2(moveDir.x * _moveSpeed, RbCompo.linearVelocity.y);
     }
 
     public void Jump()    

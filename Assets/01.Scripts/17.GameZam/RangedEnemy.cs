@@ -48,7 +48,7 @@ public class RangedEnemy : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         Vector2 direction = (player.position - transform.position).normalized;
-        projectile.GetComponent<Rigidbody2D>().velocity = direction * 10f;
+        projectile.GetComponent<Rigidbody2D>().linearVelocity = direction * 10f;
     }
 
     private void MoveTowardsPlayer()

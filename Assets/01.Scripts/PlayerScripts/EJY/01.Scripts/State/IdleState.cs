@@ -12,7 +12,7 @@ public class IdleState : State
     {
         base.Enter();
         if (_groundChecker.IsGround.Value)
-            _playerMovement.RbCompo.velocity = Vector2.zero;
+            _playerMovement.RbCompo.linearVelocity = Vector2.zero;
     }
 
     public override void StateUpdate()

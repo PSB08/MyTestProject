@@ -11,7 +11,7 @@ public class BallController : MonoBehaviour
     private Vector2 direction;
     private bool isActioned = false;
 
-    // LineRenderer Ãß°¡
+    // LineRenderer ï¿½ß°ï¿½
     private LineRenderer lineRenderer;
 
     private void Start()
@@ -39,7 +39,7 @@ public class BallController : MonoBehaviour
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         direction = (mousePosition - (Vector2)transform.position).normalized;
 
-        GetComponent<Rigidbody2D>().velocity = direction * speed;
+        GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
 
         lineRenderer.enabled = false;
     }
@@ -65,7 +65,7 @@ public class BallController : MonoBehaviour
             
             Vector2 normal = collision.contacts[0].normal;
             direction = Vector2.Reflect(direction, normal);
-            GetComponent<Rigidbody2D>().velocity = direction * speed;
+            GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
         }
         else if (collision.gameObject.CompareTag("Paddle"))
         {
@@ -75,7 +75,7 @@ public class BallController : MonoBehaviour
             float offset = transform.position.x - collision.transform.position.x;
             direction = new Vector2(offset, 1).normalized; 
             
-            GetComponent<Rigidbody2D>().velocity = direction * speed;
+            GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
 
             if (IsListEmpty(reflectManager.lists))
             {
@@ -90,7 +90,7 @@ public class BallController : MonoBehaviour
         {
             Vector2 normal = collision.contacts[0].normal;
             direction = Vector2.Reflect(direction, normal);
-            GetComponent<Rigidbody2D>().velocity = direction * speed;
+            GetComponent<Rigidbody2D>().linearVelocity = direction * speed;
         }
         else if (collision.gameObject.CompareTag("DeathWall"))
         {
@@ -103,7 +103,7 @@ public class BallController : MonoBehaviour
 
     private bool IsListEmpty(List<GameObject> list)
     {
-        return list.Count == 0; // ¸®½ºÆ®ÀÇ °³¼ö°¡ 0ÀÌ¸é ºñ¾îÀÖÀ½
+        return list.Count == 0; // ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     }
 
 }
